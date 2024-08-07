@@ -26,7 +26,7 @@ const PokemonList = () => {
   }
   const deleteAll = async () => {
     try {
-      await axios.delete('http://localhost:4000/api/users');
+      await axios.delete('https://pokemonbackend-cwnf.onrender.com/api/users');
       setUsers([]); // Clear the list after deleting all users
     } catch (error) {
       console.error("Error deleting all users:", error);
@@ -35,7 +35,7 @@ const PokemonList = () => {
 
   const handleDelete = async (pokemonOwnerName) => {
     try {
-      await axios.delete(`http://localhost:4000/api/users/${pokemonOwnerName}`);
+      await axios.delete(`https://pokemonbackend-cwnf.onrender.com/api/users/${pokemonOwnerName}`);
       // Update the local state to reflect the deletion
       setUsers(users.filter(user => user.pokemonOwnerName !== pokemonOwnerName));
     } catch (error) {
